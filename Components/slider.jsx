@@ -18,21 +18,19 @@ const Slider = () => {
 
   return (
     <>
-      <Box
-        width={"60%"}
-        margin={"auto"}
-        mt={"55px"}
-        position="relative"
-
-      >
+      <Box width="100%" margin="auto" mt="55px">
         <VisibilitySensor onChange={(isVisible) => setIsVisible(isVisible)}>
           {() => (
-            <Flex alignItems="center" gap={"23px"}>
+            <Flex
+              alignItems="center"
+              flexDir={["column", "row"]}
+              gap={["10px", "23px"]}
+            >
               <motion.div
-                initial={{ opacity: 0, x: -100 }}
+                initial={{ opacity: 0, y: -50 }}
                 animate={{
                   opacity: isVisible ? 1 : 0,
-                  x: isVisible ? 0 : -100,
+                  y: isVisible ? 0 : -50,
                 }}
                 transition={{ duration: 0.8 }}
                 style={{ position: "relative", left: 0 }}
@@ -41,10 +39,10 @@ const Slider = () => {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, x: "100%" }}
+                initial={{ opacity: 0, y: 50 }}
                 animate={{
                   opacity: isVisible ? 1 : 0,
-                  x: isVisible ? 0 : "100%",
+                  y: isVisible ? 0 : 50,
                 }}
                 transition={{ duration: 0.8 }}
                 style={{ position: "relative", left: isVisible ? 0 : "100%" }}
@@ -52,8 +50,8 @@ const Slider = () => {
                 <Image
                   src="/Images/img1.png"
                   alt="img1"
-                  height={"60px"}
-                  width={"50px"}
+                  height="60px"
+                  width="50px"
                 />
               </motion.div>
             </Flex>
@@ -62,28 +60,31 @@ const Slider = () => {
       </Box>
 
       <Flex
-        margin={"auto"}
-        width={"70%"}
-        mt={"60px"}
-        justifyContent={"space-between"}
-        gap={"5px"}
+        margin="auto"
+        width="100%"
+        mt="20px"
+        justifyContent="space-between"
+        flexWrap="wrap"
+        gap={["20px", "5px"]}
       >
         <motion.div
           variants={boxVariants}
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
+          whileHover="raised"
+          width={["100%", "30%"]}
         >
           <Box
-            bgColor={"#D8F2FF"}
-            borderRadius={"7px"}
-            padding={"30px"}
-            mr={"18px"}
+            bgColor="#D8F2FF"
+            borderRadius="7px"
+            padding={["20px", "30px"]}
+            mb="20px"
           >
             😊
-            <Text color={"black"} fontSize={"15px"} fontWeight={"bold"}>
+            <Text color="black" fontSize={["12px", "15px"]} fontWeight="bold">
               You argue with a colleague
             </Text>
-            <Text fontSize={"12px"}>
+            <Text fontSize={["10px", "12px"]}>
               You get angry and defensive, instead of staying open and working
               towards common grounds.
             </Text>
@@ -94,18 +95,20 @@ const Slider = () => {
           variants={boxVariants}
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
+          whileHover="raised"
+          width={["100%", "30%"]}
         >
           <Box
-            bgColor={"#EEEBFE"}
-            borderRadius={"7px"}
-            padding={"30px"}
-            mr={"18px"}
+            bgColor="#EEEBFE"
+            borderRadius="7px"
+            padding={["20px", "30px"]}
+            mb="20px"
           >
             😀
-            <Text color={"black"} fontSize={"15px"} fontWeight={"bold"}>
+            <Text color="black" fontSize={["12px", "15px"]} fontWeight="bold">
               You argue with a colleague
             </Text>
-            <Text fontSize={"12px"}>
+            <Text fontSize={["10px", "12px"]}>
               You get angry and defensive, instead of staying open and working
               towards common grounds.
             </Text>
@@ -115,21 +118,21 @@ const Slider = () => {
         <motion.div
           variants={boxVariants}
           initial="hidden"
-          // animate={isVisible ? "visible" : "hidden"}
-          animate={isVisible ? "raised" : "null"}
-          // whileHover="raised"
+          animate={isVisible ? "raised" : "hidden"}
+          whileHover="raised"
+          width={["100%", "30%"]}
         >
           <Box
-            bgColor={"#6341EF"}
-            borderRadius={"7px"}
-            padding={"30px"}
-            mr={"18px"}
+            bgColor="#6341EF"
+            borderRadius="7px"
+            padding={["20px", "30px"]}
+            mb="20px"
           >
             🤨
-            <Text color={"black"} fontSize={"15px"} fontWeight={"bold"}>
+            <Text color="black" fontSize={["12px", "15px"]} fontWeight="bold">
               You argue with a colleague
             </Text>
-            <Text fontSize={"12px"}>
+            <Text fontSize={["10px", "12px"]}>
               You get angry and defensive, instead of staying open and working
               towards common grounds.
             </Text>
@@ -140,18 +143,20 @@ const Slider = () => {
           variants={boxVariants}
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
+          whileHover="raised"
+          width={["100%", "30%"]}
         >
           <Box
-            bgColor={"#FFEFD5"}
-            borderRadius={"7px"}
-            padding={"30px"}
-            mr={"18px"}
+            bgColor="#FFEFD5"
+            borderRadius="7px"
+            padding={["20px", "30px"]}
+            mb="20px"
           >
             😮
-            <Text color={"black"} fontSize={"15px"} fontWeight={"bold"}>
+            <Text color="black" fontSize={["12px", "15px"]} fontWeight="bold">
               You argue with a colleague
             </Text>
-            <Text fontSize={"12px"}>
+            <Text fontSize={["10px", "12px"]}>
               You get angry and defensive, instead of staying open and working
               towards common grounds.
             </Text>
@@ -163,3 +168,5 @@ const Slider = () => {
 };
 
 export default Slider;
+
+

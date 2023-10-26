@@ -1,6 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
-
-import { Box, Divider, Flex, Heading, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Divider,
+  Flex,
+  Heading,
+  Text,
+  SimpleGrid,
+} from "@chakra-ui/react";
 
 const OpenVacanciesSection = () => {
   const headingRef = useRef(null);
@@ -26,48 +32,37 @@ const OpenVacanciesSection = () => {
   }, []);
 
   return (
-    <Box width={"60%"} margin={"auto"} mt={"50px"}>
+    <Box width="100%" px={4} mt={5}>
       <Heading
         ref={headingRef}
         className={animate ? "heading-animation" : ""}
-        mb={"30px"}
+        fontSize={["2xl", "3xl", "4xl"]}
+        mb={["20px", "30px"]}
+        textAlign="center"
       >
         Open Vacancies
       </Heading>
 
-      <Flex justifyContent={"space-between"}>
-        <Box width={"30%"} bgColor={"#FEFBEC"} borderRadius={"10px"} p={"24px"}>
-          <Text fontWeight={"bold"} mb={"6px"} fontSize={"17px"}>
-            Senior Full Stack Engineer
-          </Text>
-          <ul style={{ fontSize: "13px", mb: "6px", marginLeft: "12px" }}>
-            <li>Full time position</li>
-            <li>Burlin or remote</li>
-            <li>$65-85k, 0.5-1.50% equity share option</li>
-          </ul>
-        </Box>
-        <Box width={"30%"} bgColor={"#FEFBEC"} borderRadius={"10px"} p={"24px"}>
-          <Text fontWeight={"bold"} mb={"6px"} fontSize={"17px"}>
-            Senior Full Stack Engineer
-          </Text>
-          <ul style={{ fontSize: "13px", mb: "6px", marginLeft: "12px" }}>
-            <li>Full time position</li>
-            <li>Burlin or remote</li>
-            <li>$65-85k, 0.5-1.50% equity share option</li>
-          </ul>
-        </Box>
-
-        <Box width={"30%"} bgColor={"#FEFBEC"} borderRadius={"10px"} p={"24px"}>
-          <Text fontWeight={"bold"} mb={"6px"} fontSize={"17px"}>
-            Senior Full Stack Engineer
-          </Text>
-          <ul style={{ fontSize: "13px", mb: "6px", marginLeft: "12px" }}>
-            <li>Full time position</li>
-            <li>Burlin or remote</li>
-            <li>$65-85k, 0.5-1.50% equity share option</li>
-          </ul>
-        </Box>
-      </Flex>
+      <SimpleGrid columns={[1, 1, 3]} gap={5}>
+        {Array.from({ length: 3 }).map((_, index) => (
+          <Box
+            key={index}
+            bgColor="#FEFBEC"
+            borderRadius="10px"
+            p={4}
+            fontSize={["sm", "md"]}
+          >
+            <Text fontWeight="bold" mb={2} fontSize={["lg", "xl"]}>
+              Senior Full Stack Engineer
+            </Text>
+            <ul style={{ marginLeft: "12px" }}>
+              <li>Full-time position</li>
+              <li>Berlin or remote</li>
+              <li>$65-85k, 0.5-1.50% equity share option</li>
+            </ul>
+          </Box>
+        ))}
+      </SimpleGrid>
     </Box>
   );
 };

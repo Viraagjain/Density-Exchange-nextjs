@@ -28,25 +28,18 @@ const Slider3 = () => {
     <div>
       <Box
         bgColor={"#EDF8FE"}
-        width={"60%"}
+        width={["95%", "85%", "60%"]}
         m={"auto"}
         textAlign={"center"}
-        mt={"55px"}
-        className="slide-in"
-        p={"85px"}
+        mt={["20px", "35px", "55px"]}
+        className={`slide-in ${animate ? "active" : ""}`}
+        p={["20px", "60px", "85px"]}
         borderRadius={"10px"}
       >
-        <Text
-          mt={"40px"}
-          mb={"14px"}
-          className={`fade-in ${animate ? "active" : ""}`}
-        >
-          Let your friends, family, and co-workers (anonymously) rate your
-          social skills.
+        <Text mt={["20px", "30px", "40px"]} mb={["10px", "20px", "30px"]}>
+          Let your friends, family, and co-workers (anonymously) rate your social skills.
         </Text>
-        <Heading mb={"30px"} className={`fade-in ${animate ? "active" : ""}`}>
-          Ever wonder what others think of you?
-        </Heading>
+        <Heading mb={["20px", "30px", "40px"]}>Ever wonder what others think of you?</Heading>
         <Image
           src="/Images/img3.png"
           alt="img3"
@@ -54,43 +47,26 @@ const Slider3 = () => {
           className={`fade-in ${animate ? "active" : ""}`}
           ref={animationRef}
         />
-        <Flex m={"auto"} justifyContent={"space-between"} mt={"10px"}>
-          <Text
-            width={"30%"}
-            fontSize={"11px"}
-            className={animate ? "slide-in" : ""}
-            ref={animationRef}
-          >
+        <Flex m={"auto"} justifyContent="space-between" flexWrap="wrap" mt={["10px", "20px", "30px"]}>
+          <Text width={["100%", "45%", "30%"]} fontSize={["sm", "md", "lg"]} mb={["10px", "0"]}>
             Answer questions about your social skills
           </Text>
-          <Text
-            width={"30%"}
-            fontSize={"11px"}
-            className={animate ? "slide-in" : ""}
-            ref={animationRef}
-          >
+          <Text width={["100%", "45%", "30%"]} fontSize={["sm", "md", "lg"]} mb={["10px", "0"]}>
             Let others anonymously answer the same questions about you
           </Text>
-          <Text
-            width={"30%"}
-            fontSize={"11px"}
-            className={animate ? "slide-in" : ""}
-            ref={animationRef}
-          >
+          <Text width={["100%", "45%", "30%"]} fontSize={["sm", "md", "lg"]}>
             Find out where you and others see things the same way and where not!
           </Text>
         </Flex>
-
         <Box
-          width={"80%"}
+          width={["100%", "80%"]}
           bgColor={"white"}
-          borderRadius={"10px"}
+          borderRadius={["0px", "10px"]}
           m={"auto"}
-          mt={"40px"}
-          p={"40px"}
+          mt={["20px", "40px"]}
+          p={["20px", "40px"]}
         >
-          {/* First Flex */}
-          <Flex width={"90%"} justifyContent={"space-between"} ml={"-8%"}>
+          <Flex justifyContent="space-between" flexWrap="wrap" mb={["20px", "40px"]}>
             <Box
               bgColor={"#6341EF"}
               color={"white"}
@@ -98,6 +74,7 @@ const Slider3 = () => {
               borderRadius={"7px"}
               pl={"11px"}
               pr={"11px"}
+              mb={["10px", "0"]}
               className={animate ? "slide-in" : ""}
               ref={animationRef}
             >
@@ -113,7 +90,7 @@ const Slider3 = () => {
               className={animate ? "slide-in" : ""}
               ref={animationRef}
             >
-              Anonymonos2
+              Anonymous2
             </Box>
           </Flex>
 
@@ -123,8 +100,7 @@ const Slider3 = () => {
             className={`fade-in ${animate ? "active" : ""}`}
           />
 
-          {/* Second Flex */}
-          <Flex width={"90%"} ml={"25%"} justifyContent={"space-between"}>
+          <Flex justifyContent="space-between" flexWrap="wrap">
             <Box
               bgColor={"#41C4FA"}
               color={"white"}
@@ -132,10 +108,11 @@ const Slider3 = () => {
               borderRadius={"7px"}
               pl={"11px"}
               pr={"11px"}
+              mb={["10px", "0"]}
               className={animate ? "slide-in" : ""}
               ref={animationRef}
             >
-              Anonymonos1
+              Anonymous1
             </Box>
             <Box
               bgColor={"#58C896"}
@@ -147,7 +124,7 @@ const Slider3 = () => {
               className={animate ? "slide-in" : ""}
               ref={animationRef}
             >
-              Anonymonos3
+              Anonymous3
             </Box>
           </Flex>
         </Box>
@@ -157,3 +134,4 @@ const Slider3 = () => {
 };
 
 export default Slider3;
+

@@ -1,20 +1,9 @@
-import {
-  Text,
-  Box,
-  Flex,
-  Image,
-  Heading,
-  Slider,
-  SliderMark,
-  SliderTrack,
-  SliderFilledTrack,
-  SliderThumb,
-} from "@chakra-ui/react";
+import { Text, Box, Flex, Image, Heading, Slider, SliderMark, SliderTrack, SliderFilledTrack, SliderThumb } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import VisibilitySensor from "react-visibility-sensor";
 
-const Silder2 = () => {
+const Slider2 = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -24,69 +13,51 @@ const Silder2 = () => {
   const [sliderValue, setSliderValue] = useState(50);
 
   const labelStyles = {
-    mt: "2",
-    ml: "-2.5",
-    fontSize: "sm",
+    mt: ["1", "2"],
+    ml: ["-1", "-2.5"],
+    fontSize: ["xs", "sm"],
   };
 
   return (
     <div>
-      <Box
-        width={"60%"}
-        margin={"auto"}
-        mb={"30px"}
-        position="relative"
-        mt={"55px"}
-      >
+      <Box width={["95%", "80%", "60%"]} margin="auto" mb={["20px", "30px", "40px"]} position="relative" mt={["40px", "55px", "70px"]}>
         <VisibilitySensor onChange={(isVisible) => setIsVisible(isVisible)}>
           {() => (
-            <Flex alignItems="center" gap={"23px"}>
+            <Flex alignItems="center" flexDir={["column", "row"]} gap={["10px", "23px"]}>
               <motion.div
-                initial={{ opacity: 0, x: -100 }}
+                initial={{ opacity: 0, y: [-100, -50] }}
                 animate={{
                   opacity: isVisible ? 1 : 0,
-                  x: isVisible ? 0 : -100,
+                  y: isVisible ? 0 : [-50, -100],
                 }}
                 transition={{ duration: 0.8 }}
                 style={{ position: "relative", left: 0 }}
               >
-                <Text>Wrong with self improvement & how we are fixing it.</Text>
-                <Heading>Self-Improvement. Ugh.</Heading>
+                <Text fontSize={["lg", "xl"]} fontWeight="bold">
+                  Wrong with self-improvement & how we are fixing it.
+                </Text>
+                <Heading fontSize={["2xl", "4xl"]}>Self-Improvement. Ugh.</Heading>
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, x: "100%" }}
+                initial={{ opacity: 0, x: [100, 50] }}
                 animate={{
                   opacity: isVisible ? 1 : 0,
-                  x: isVisible ? 0 : "100%",
+                  x: isVisible ? 0 : [50, 100],
                 }}
                 transition={{ duration: 0.8 }}
-                style={{ position: "relative", left: isVisible ? 0 : "100%" }}
+                style={{ position: "relative", left: isVisible ? 0 : [50, 100] }}
               >
-                <Image
-                  src="/Images/img2.png"
-                  alt="img1"
-                  height={"60px"}
-                  width={"50px"}
-                />
+                <Image src="/Images/img2.png" alt="img1" height={["40px", "60px"]} width={["40px", "50px"]} />
               </motion.div>
             </Flex>
           )}
         </VisibilitySensor>
       </Box>
 
-      <Flex
-        flexDirection="row"
-        width="35%"
-        margin="auto"
-        maxH="800px"
-        gap={"30px"}
-      >
-        <Box pt={6} pb={2} border={"2px solid blue"}>
-          <Slider
-            aria-label="slider-ex-6"
-            onChange={(val) => setSliderValue(val)}
-          >
+      <Flex flexDir={["column", "row"]} width={["95%", "80%", "70%"]} margin="auto" mt={["40px", "60px"]} justifyContent="space-between" gap={["20px", "30px"]}>
+        <Box pt={["4", "6"]} pb={["2", "4"]} border={["1px solid blue", "2px solid blue"]}>
+          <Slider aria-label="slider-ex-6" onChange={(val) => setSliderValue(val)}>
             <SliderMark value={25} {...labelStyles}>
               25%
             </SliderMark>
@@ -96,15 +67,7 @@ const Silder2 = () => {
             <SliderMark value={75} {...labelStyles}>
               75%
             </SliderMark>
-            <SliderMark
-              value={sliderValue}
-              textAlign="center"
-              bg="blue.500"
-              color="white"
-              mt="-10"
-              ml="-5"
-              w="12"
-            >
+            <SliderMark value={sliderValue} textAlign="center" bg="blue.500" color="white" mt={["-6", "-10"]} ml={["-3", "-5"]} w={["10", "12"]}>
               {sliderValue}%
             </SliderMark>
             <SliderTrack>
@@ -114,60 +77,40 @@ const Silder2 = () => {
           </Slider>
         </Box>
 
-        <Flex flexDirection="column">
-          <Box
-            // mb="30px"
-            className="slide"
-            style={{ marginTop: "70px" }}
-          >
-            <Text color="black" fontSize="20px" fontWeight="bold" mb="13px">
-              Its not an easy as 1-2-3
+        <Flex flexDir="column" width={["100%", "60%"]}>
+          <Box mt={["40px", "70px"]}>
+            <Text color="black" fontSize={["xl", "2xl"]} fontWeight="bold" mb={["10px", "13px"]}>
+              It's not as easy as 1-2-3
             </Text>
             <Text>
-              The journey of change may be long, but our sessions are quick. We
-              get to the point and tell you what you want to know (and nothing
-              else).
+              The journey of change may be long, but our sessions are quick. We get to the point and tell you what you want to know (and nothing else).
             </Text>
           </Box>
 
-          <Box
-            // mb="30px"
-            className="slide"
-            style={{ marginTop: "70px" }}
-          >
-            <Text color="black" fontSize="20px" fontWeight="bold" mb="13px">
-              Its not an easy as 1-2-3
+          <Box mt={["40px", "70px"]}>
+            <Text color="black" fontSize={["xl", "2xl"]} fontWeight="bold" mb={["10px", "13px"]}>
+              It's not as easy as 1-2-3
             </Text>
             <Text>
-              The journey of change may be long, but our sessions are quick. We
-              get to the point and tell you what you want to know (and nothing
-              else).
+              The journey of change may be long, but our sessions are quick. We get to the point and tell you what you want to know (and nothing else).
             </Text>
           </Box>
 
-          <Box
-            // mb="30px"
-            className="slide"
-            style={{ marginTop: "70px" }}
-          >
-            <Text color="black" fontSize="20px" fontWeight="bold" mb="13px">
-              Its not an easy as 1-2-3
+          <Box mt={["40px", "70px"]}>
+            <Text color="black" fontSize={["xl", "2xl"]} fontWeight="bold" mb={["10px", "13px"]}>
+              It's not as easy as 1-2-3
             </Text>
             <Text>
-              The journey of change may be long, but our sessions are quick. We
-              get to the point and tell you what you want to know (and nothing
-              else).
+              The journey of change may be long, but our sessions are quick. We get to the point and tell you what you want to know (and nothing else).
             </Text>
           </Box>
 
-          <Box className="slide" style={{ marginTop: "70px" }}>
-            <Text color="black" fontSize="20px" fontWeight="bold" mb="13px">
-              Its not an easy as 1-2-3
+          <Box mt={["40px", "70px"]}>
+            <Text color="black" fontSize={["xl", "2xl"]} fontWeight="bold" mb={["10px", "13px"]}>
+              It's not as easy as 1-2-3
             </Text>
             <Text>
-              The journey of change may be long, but our sessions are quick. We
-              get to the point and tell you what you want to know (and nothing
-              else).
+              The journey of change may be long, but our sessions are quick. We get to the point and tell you what you want to know (and nothing else).
             </Text>
           </Box>
         </Flex>
@@ -176,4 +119,5 @@ const Silder2 = () => {
   );
 };
 
-export default Silder2;
+export default Slider2;
+

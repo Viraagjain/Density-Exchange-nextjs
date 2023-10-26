@@ -1,6 +1,6 @@
 import { Box, Flex, Text, chakra } from "@chakra-ui/react";
 
-const TextMessage = () => {
+const TextMsg = () => {
   return (
     <Flex justifyContent={["left", "left", "left", "center", "center"]}>
       <Box
@@ -77,4 +77,4 @@ const TextMessage = () => {
   );
 };
 
-export default TextMessage;
+export default TextMsg;
